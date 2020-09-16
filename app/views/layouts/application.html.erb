@@ -10,6 +10,7 @@
 
       <ul>
 
+<<<<<<< HEAD
         <li>
           <%= link_to "Posts" , posts_path, {:class => "link"} %>
         </li>
@@ -32,6 +33,17 @@
           <li>
             <%= link_to "Logout", destroy_user_session_path, {method: :delete, :class => "link"}  %>
           </li>
+=======
+      <% if !user_signed_in? %>
+        <%= link_to "Login", new_user_session_path %>  
+      <% else %>
+
+        <%= link_to "New Post", new_post_path %>   
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <%= link_to "Edit User", edit_user_registration_path %>
+                
+      <% end %>
+>>>>>>> c26401240e6082825e39df9c17ad34f9870412e7
 
           <li>
             <%= link_to "Edit User", edit_user_registration_path, {:class => "link"}  %>
